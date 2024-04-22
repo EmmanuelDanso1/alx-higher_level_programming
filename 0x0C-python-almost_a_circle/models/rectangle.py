@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''Rectangle module'''
-from .base import Base
+from base import Base
 class Rectangle(Base):
     '''Rectangle class'''
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -48,4 +48,8 @@ class Rectangle(Base):
             raise TypeError(" y must be an integer")
         if value < 0:
              raise ValueError(" y must be >= 0")
-        self.__y = value    
+        self.__y = value
+    def area(self):
+        '''returns area'''
+        area = self.width  * self.height
+        return area
