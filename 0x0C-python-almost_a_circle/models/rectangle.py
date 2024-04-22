@@ -53,3 +53,8 @@ class Rectangle(Base):
         '''returns area'''
         area = self.width  * self.height
         return area
+
+    def display(self):
+        '''displaying a hashtag #'''
+        for _ in range(self.height):
+            print("#" * self.width)
