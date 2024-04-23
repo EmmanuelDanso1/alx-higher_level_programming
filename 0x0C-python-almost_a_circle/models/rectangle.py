@@ -61,4 +61,5 @@ class Rectangle(Base):
 
     def __str__(self):
         '''Rectangle update by overriding by __str__'''
-        return "[Rectangle]({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle]({}){}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
