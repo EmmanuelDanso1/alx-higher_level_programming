@@ -56,8 +56,10 @@ class Rectangle(Base):
 
     def display(self):
         '''displaying a hashtag #'''
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print("#" * self.width)
+            print("" *self.x + "#" * self.width)
 
     def __str__(self):
         '''Rectangle update by overriding by __str__'''
