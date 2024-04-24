@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''Rectangle module'''
-from .base import Base
+from base import Base
 class Rectangle(Base):
     '''Rectangle class'''
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -91,4 +91,9 @@ class Rectangle(Base):
                     self.y = value
                 else:
                     break
+if __name__ == "__main__":
+    r1 = Rectangle(10,10,10,10)
+    print(r1)
+    r1.update(height=1)
+    print(r1)
 
