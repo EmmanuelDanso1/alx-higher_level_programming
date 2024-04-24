@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
 '''Rectangle module'''
-class Square(Rectangle):
+class Square(Rectangle)
+    '''class inheritance'''
     def __init__(self, size, x=0, y=0, id=None):
         '''constructor'''
         super().__init__(size, size, x, y,id)
