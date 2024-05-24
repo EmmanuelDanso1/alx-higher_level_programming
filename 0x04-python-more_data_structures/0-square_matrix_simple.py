@@ -4,4 +4,3 @@ def square_matrix_simple(matrix=[]):
     for row in matrix:
         new_matrix.append(list(map(lambda x: x * x, row)))
     return new_matrix
-
