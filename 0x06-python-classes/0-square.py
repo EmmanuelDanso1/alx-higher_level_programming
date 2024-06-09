@@ -2,5 +2,8 @@
 """A module for Square"""
 
 class Square:
-    """ Represent a Square"""
+    """
+    An empty class that defines a class
+    It serves as a basic structure for defining a square
+    """
     pass
