@@ -8,3 +8,6 @@ function factorial(n){
 	}
 	return n * factorial(n - 1);
 }
+const input = parseInt(process.argv[2], 10);
+const res = factorial(input);
+console.log(res);
