@@ -1,0 +1,1 @@
+This is a readme which contains JavaScript, objects, closure and functions
