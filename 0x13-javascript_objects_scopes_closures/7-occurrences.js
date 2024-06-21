@@ -9,5 +9,3 @@ exports.nbOccurences = function(list, searchElement){
     }
     return count;
 };
-
-module.exports = Square;
