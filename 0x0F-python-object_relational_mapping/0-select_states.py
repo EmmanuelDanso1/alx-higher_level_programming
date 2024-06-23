@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
-This is an object relational mapping project with
-MySQL and Python
-A script that lists all states from the database hbtn_0e_0_usa
+This Script that lists all states from the database hbtn_0e_0_usa.
+Arguments:
+    mysql username (str)
+    mysql password (str)
+    database name (str)
 """
 import MySQLdb
 import sys
@@ -20,5 +22,3 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    
-    list_all_state(username, password, database_name)
