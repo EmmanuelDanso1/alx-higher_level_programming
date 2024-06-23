@@ -7,8 +7,8 @@ A script that lists all states from the database hbtn_0e_0_usa
 import MySQLdb
 import sys
 def list_all_state(username, password, database_name):
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2],database_name=sys.argv[3],port=3306)
+    db = MySQLdb.connect(host="localhost", user=username,
+                         passwd=password,db=database_name,port=3306)
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cur.fetchall()
@@ -17,4 +17,8 @@ def list_all_state(username, password, database_name):
     cur.close()
     db.close()
 if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    
     list_all_state(username, password, database_name)
