@@ -8,13 +8,13 @@ Arguments:
     database name (str)
 """
 
-import sys
+from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
-    username, passw, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    db = MySQLdb.connect(user=username, passwd=passw, db=db_name)
+    db = MySQLdb.connect(user=username, passwd=password, db=db_name)
     cur = db.cursor()
 
     cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
