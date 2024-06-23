@@ -19,10 +19,10 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-            "SELECT cities.name \
-                    FROM cities INNER JOIN states \
-                    ON cities.state_id = states.id WHERE states.name = %s \
-                    ORDER BY cities.id", 
+            "SELECT c.name \
+                    FROM cities c INNER JOIN state s \
+                    ON c.state_id = s.id WHERE s.name = %s \
+                    ORDER BY c.id", 
                     (state_name,)
                     )
     rows = cur.fetchall()
