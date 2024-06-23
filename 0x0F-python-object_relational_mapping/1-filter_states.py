@@ -8,20 +8,20 @@ mysql username, mysql password and database name
 script should connect to a MySQL server running on localhost at port 3306
 """
 
-import MySQLdb as db
-from sys import argv
+import MySQLdb
+import sys
 
 
 if __name__ == '__main__':
-    my_db = db.connect(host="localhost", port=3306,
+    db= db.connect(host="localhost", port=3306,
                             user=argv[1], passwd=argv[2], db=argv[3])
-    my_cursor = my_db.cursor()
+    cur = db.cursor()
 
-    my_cursor.execute(
+    cur.execute(
         "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                 ORDER BY states.id ASC")
 
-    rows_selected = my_cursor.fetchall()
+    rows_selected = cur.fetchall()
 
     for row in rows_selected:
         print(row)
