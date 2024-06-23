@@ -1,0 +1,1 @@
+This readme emphasizes on SQLAlchemy, MySQLdb and Database connections with broader overview of Object Relational Mapping
