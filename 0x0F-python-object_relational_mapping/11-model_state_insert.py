@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """
-This script prints the `State` object in `hbtn_0e_0_usa`
-where `name` matches the argument `state name to search`.
+This script adds the `State` object “Louisiana”
+to the database `hbtn_0e_6_usa`.
 
 Arguments:
     mysql username (str)
     mysql password (str)
     database name (str)
-    state name to search (str)
 """
 
 import sys
@@ -22,15 +21,13 @@ from model_state import Base, State
 if __name__ == "__main__":
     username, passw, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    state_name = sys.argv[4]
-
     url = {
         "drivername": "mysql+mysqldb",
         "host": "localhost",
         "username": username,
         "password": passw,
         "database": db_name,
-        "port": 3306
+        "port":3306
     }
 
     engine = create_engine(URL(**url), pool_pre_ping=True)
@@ -38,7 +35,8 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    q = session.query(State).filter(State.name == state_name)
-    q = q.order_by(State.id)
+    new = State(name="Louisiana")
+    session.add(new)
+    session.commit()
 
-    print(q.first().id) if q.first() else print("Not found")
+    print(new.id)

@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 """
-This script prints the `State` object in `hbtn_0e_0_usa`
-where `name` matches the argument `state name to search`.
+This script prints all `City` objects from the database `hbtn_0e_14_usa`.
 
 Arguments:
     mysql username (str)
     mysql password (str)
     database name (str)
-    state name to search (str)
 """
 
 import sys
@@ -17,12 +15,11 @@ from sqlalchemy.orm import Session
 from sqlalchemy.engine.url import URL
 
 from model_state import Base, State
+from model_city import City
 
 
 if __name__ == "__main__":
     username, passw, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-
-    state_name = sys.argv[4]
 
     url = {
         "drivername": "mysql+mysqldb",
@@ -38,7 +35,7 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    q = session.query(State).filter(State.name == state_name)
-    q = q.order_by(State.id)
+    q = session.query(City, State).filter(City.state_id == State.id)
 
-    print(q.first().id) if q.first() else print("Not found")
+    for city, state in q:
+        print(f"{state.name}: ({city.id}) {city.name}")
