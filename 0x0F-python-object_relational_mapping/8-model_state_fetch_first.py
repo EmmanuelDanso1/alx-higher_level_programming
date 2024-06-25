@@ -24,8 +24,7 @@ if __name__ == "__main__":
         "host": "localhost",
         "username": username,
         "password": password,
-        "database": db_name,
-        "port": 3306
+        "database": db_name
     }
 
     engine = create_engine(URL(**url), pool_pre_ping=True)
