@@ -15,7 +15,7 @@ if __name__ == "__main__":
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
     state_name = sys.argv[4]
-    db = MySQLdb.connect(user=username, passwd=passw, db=db_name)
+    db = MySQLdb.connect(user=username, passwd=password, db=db_name)
     cur = db.cursor()
 
     cur.execute(
