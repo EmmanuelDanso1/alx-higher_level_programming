@@ -3,6 +3,7 @@
 Using request to get url link
 """
 import requests
+
 if __name__== "__main__":
 
     url = "https://alx-intranet.hbtn.io/status"
