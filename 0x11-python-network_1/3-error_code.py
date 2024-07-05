@@ -5,6 +5,7 @@ Scripts that handles exceptions
 import urllib.request
 import urllib.error
 import sys
+
 if __name__== "__main__":
 
     url = sys.argv[1]
@@ -14,4 +15,5 @@ if __name__== "__main__":
             print(body.decode('utf-8'))
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
+
 
