@@ -7,6 +7,7 @@ from dynamically creating new instance attributes
 
 class LockedClass:
     """
-    LockedClass class preventing users from creating instances __user__
+    LockedClass class preventing users from creating instances __slots__
     """
-    __user__ = ['first_name']
+    __slots__ = ['first_name']
+
