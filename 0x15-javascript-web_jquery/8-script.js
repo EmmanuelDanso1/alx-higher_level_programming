@@ -7,7 +7,7 @@ $(document).ready(function() {
       // Loop through each movie in the response
       $.each(data.results, function(index, movie) {
         // Create a new <li> element with the movie title
-        var listItem = $('<li></li>').text(movie.title);
+        let listItem = $('<li></li>').text(movie.title);
         // Append the <li> element to UL#list_movies
         $('#list_movies').append(listItem);
       });
